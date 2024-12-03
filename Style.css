@@ -1,0 +1,509 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Epilogue", sans-serif;
+  text-decoration: none;
+  list-style: none;
+  font-weight: 700;
+}
+
+:root {
+  --Almost-white: hsl(0, 0%, 98%);
+  --Medium-Gray: hsl(0, 0%, 41%);
+  --Almost-Black: hsl(0, 0%, 8%);
+  --p-font: 18px;
+}
+
+/* Header Styles */
+
+.header {
+  background-color: #fff;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.menu-icon.active {
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links.active {
+  display: block;
+}
+
+.nav-links li {
+  margin-right: 40px;
+}
+
+.nav-links a {
+  color: var(--Medium-Gray);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--Almost-Black);
+  transition: color 0.2s ease;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  margin-top: 20px;
+  background-color: var(--Almost-white);
+  display: none;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+  margin-bottom: 10px;
+}
+
+.dropdown-menu a {
+  text-decoration: none;
+  color: var(--Medium-Gray);
+  transition: color 0.2s ease;
+  justify-content: center;
+}
+
+.dropdown-menu a:hover {
+  color: var(--Almost-Black);
+}
+
+.dropdown:active .dropdown-menu {
+  display: block;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.login-btn {
+  color: var(--Medium-Gray);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.login-btn:active {
+  color: var(--Almost-Black);
+}
+
+.register-btn {
+  background-color: transparent;
+  color: var(--Medium-Gray);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.register-btn:active {
+  color: var(--Almost-Black);
+}
+
+/* SIDE BAR  */
+
+a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+  color: var(--Medium-Gray);
+}
+
+.sidebar ul li a {
+  line-height: 0.8;
+}
+.sidebar a:hover {
+  color: var(--Almost-Black);
+}
+
+.sidebar {
+  background-color: #fff;
+  position: fixed;
+  display: none;
+  width: 50%;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  padding: 1rem;
+}
+.sidebar .logo {
+  position: absolute;
+  display: flex;
+  right: 35px;
+  top: 15px;
+  z-index: 1000;
+}
+
+.sidebar li a {
+  line-height: 2.9;
+}
+
+/* .sidebar .dropdown-menu li {
+  position: static;
+} */
+
+.sidebar .auth-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Home section */
+
+section {
+  padding: 120px 10% 90px;
+}
+
+.home-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 2.4rem;
+  height: 100vh;
+}
+
+aside img {
+  max-width: 530px;
+  height: 600px;
+}
+
+.home-content {
+  padding: 80px 0px;
+}
+
+.home-content h1 {
+  font-size: 5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.home-content p {
+  color: var(--Medium-Gray);
+  font-size: var(--p-font);
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.learnmore-btn {
+  width: 100%;
+  height: 100px;
+}
+.learnmore-btn a {
+  background-color: var(--Almost-Black);
+  color: var(--Almost-white);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.learnmore-btn a:hover {
+  background-color: transparent;
+  color: var(--Almost-Black);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+.client {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.client img {
+  width: 100%;
+  height: auto;
+}
+
+/* Media Queries */
+
+@media (max-width: 500px) {
+  :root {
+    --p-font: 1rem;
+    --h1-font-size: 2.5rem;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .nav-links .logo {
+    margin-right: 40px;
+    padding: 10px;
+  }
+
+  .menu-icon {
+    position: absolute;
+    display: block;
+    top: 25px;
+    right: 35px;
+    padding: 5px;
+  }
+
+  .show-on-mobile {
+    margin-top: -150px;
+    content: url("./images/image-hero-mobile.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+  }
+
+  .home-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 40px;
+  }
+
+  .home-content h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-content p {
+    color: var(--Medium-Gray);
+    font-size: var(--p-font);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    text-align: center;
+    padding: 0 40px;
+  }
+
+  .learnmore-btn {
+    width: 100%;
+    height: 100px;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .attribution {
+    display: none;
+  }
+
+  .client {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px;
+    width: 250px;
+    width: 100%;
+  }
+
+  /* MOBILE SIDEBAR */
+  a {
+    text-decoration: none;
+    transition: color 0.2s ease;
+    color: var(--Medium-Gray);
+  }
+
+  .sidebar ul li a {
+    line-height: 0.8;
+  }
+
+  .sidebar a:hover {
+    color: var(--Almost-Black);
+  }
+
+  .mobile-dropdown {
+    position: relative;
+  }
+
+  .dropdown-btn {
+    cursor: pointer;
+  }
+
+  .mobile-dropdown-menu {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .mobile-dropdown-menu li {
+    color: var(--Medium-Gray);
+  }
+
+  .mobile-dropdown-menu a {
+    display: block;
+    padding: 0.5rem 2rem;
+  }
+
+  .mobile-dropdown:active .mobile-dropdown-menu {
+    display: block;
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --p-font: 1rem;
+    --h1-font-size: 2.5rem;
+  }
+  .navbar .hide-on-mobiles {
+    display: none;
+  }
+  .nav-links .logo {
+    margin-right: 40px;
+    padding: 10px;
+  }
+
+  .menu-icon {
+    position: absolute;
+    display: block;
+    top: 25px;
+    right: 35px;
+    padding: 5px;
+  }
+
+  .show-on-mobile {
+    margin-top: -150px;
+    content: url("./images/image-hero-mobile.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+    margin-left: 20px;
+  }
+
+  .home-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 40px;
+  }
+
+  .home-content h1 {
+    font-size: var(--h1-font-size);
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-content p {
+    color: var(--Medium-Gray);
+    font-size: var(--p-font);
+    margin-bottom: 2rem;
+    line-height: 1.9;
+    text-align: center;
+    padding: 0 50px;
+  }
+
+  .learnmore-btn {
+    width: 100%;
+    height: 100px;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  aside {
+    display: none;
+  }
+
+  .attribution {
+    display: none;
+  }
+
+  .client {
+    margin-top: -60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 50px;
+    width: 100%;
+  }
+
+  /* MOBILE SIDEBAR */
+
+  .mobile-dropdown {
+    position: relative;
+  }
+
+  .dropdown-btn {
+    cursor: pointer;
+  }
+
+  .mobile-dropdown-menu {
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .mobile-dropdown-menu li {
+    color: var(--Medium-Gray);
+  }
+
+  .mobile-dropdown-menu a {
+    display: block;
+    padding: 0.5rem 2rem;
+  }
+
+  .mobile-dropdown:active .mobile-dropdown-menu {
+    display: block;
+  }
+
+  .attribution {
+    display: none;
+  }
+}
